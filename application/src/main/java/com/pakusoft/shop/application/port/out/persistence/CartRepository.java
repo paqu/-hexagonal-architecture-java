@@ -1,4 +1,4 @@
-package com.pakusoft.shop.application.port.out.persistance;
+package com.pakusoft.shop.application.port.out.persistence;
 
 import com.pakusoft.shop.model.cart.Cart;
 import com.pakusoft.shop.model.customer.CustomerId;

@@ -1,7 +1,7 @@
 package com.pakusoft.shop.application.service.product;
 
 import com.pakusoft.shop.application.port.in.product.FindProductsUseCase;
-import com.pakusoft.shop.application.port.out.persistance.ProductRepository;
+import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 
 import java.util.List;

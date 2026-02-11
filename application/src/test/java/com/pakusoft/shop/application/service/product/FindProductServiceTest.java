@@ -1,6 +1,6 @@
 package com.pakusoft.shop.application.service.product;
 
-import com.pakusoft.shop.application.port.out.persistance.ProductRepository;
+import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,7 @@
 package com.pakusoft.shop.adapter.out.persistance.inmemory;
 
 import com.pakusoft.shop.adapter.out.persistance.DemoProducts;
-import com.pakusoft.shop.application.port.out.persistance.ProductRepository;
+import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 import com.pakusoft.shop.model.product.ProductId;
 

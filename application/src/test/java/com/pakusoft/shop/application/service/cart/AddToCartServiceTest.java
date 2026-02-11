@@ -1,8 +1,8 @@
 package com.pakusoft.shop.application.service.cart;
 
 import com.pakusoft.shop.application.port.in.cart.ProductNotFoundException;
-import com.pakusoft.shop.application.port.out.persistance.CartRepository;
-import com.pakusoft.shop.application.port.out.persistance.ProductRepository;
+import com.pakusoft.shop.application.port.out.persistence.CartRepository;
+import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.cart.Cart;
 import com.pakusoft.shop.model.cart.NotEnoughItemsInStockException;
 import com.pakusoft.shop.model.customer.CustomerId;

@@ -1,7 +1,7 @@
 package com.pakusoft.shop.application.service.cart;
 
 import com.pakusoft.shop.application.port.in.cart.GetCartUseCase;
-import com.pakusoft.shop.application.port.out.persistance.CartRepository;
+import com.pakusoft.shop.application.port.out.persistence.CartRepository;
 import com.pakusoft.shop.model.cart.Cart;
 import com.pakusoft.shop.model.customer.CustomerId;
 
