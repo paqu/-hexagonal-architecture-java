@@ -42,4 +42,8 @@ public class Cart {
                 .reduce(Money::add)
                 .orElse(null);
     }
+    public void putProductIgnoringNotEnoughItemsInStock(Product product, int quantity) {
+        lineItems.put(product.id(), new CartLineItem(product, quantity));
+    }
+
 }
