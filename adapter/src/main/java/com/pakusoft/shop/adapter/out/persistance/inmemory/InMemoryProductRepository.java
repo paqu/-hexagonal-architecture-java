@@ -4,13 +4,16 @@ import com.pakusoft.shop.adapter.out.persistance.DemoProducts;
 import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 import com.pakusoft.shop.model.product.ProductId;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
-
+@ConditionalOnProperty(name = "persistence", havingValue = "inmemory", matchIfMissing = true)
+@Repository
 public class InMemoryProductRepository implements ProductRepository {
 
     private final Map<ProductId, Product> products = new ConcurrentHashMap<>();
