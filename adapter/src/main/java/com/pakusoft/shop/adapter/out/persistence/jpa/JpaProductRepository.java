@@ -1,6 +1,6 @@
-package com.pakusoft.shop.adapter.out.persistance.jpa;
+package com.pakusoft.shop.adapter.out.persistence.jpa;
 
-import com.pakusoft.shop.adapter.out.persistance.DemoProducts;
+import com.pakusoft.shop.adapter.out.persistence.DemoProducts;
 import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 import com.pakusoft.shop.model.product.ProductId;

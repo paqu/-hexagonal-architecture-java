@@ -1,4 +1,4 @@
-package com.pakusoft.shop.adapter.out.persistance.jpa;
+package com.pakusoft.shop.adapter.out.persistence.jpa;
 
 import com.pakusoft.shop.model.money.Money;
 import com.pakusoft.shop.model.product.Product;

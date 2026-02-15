@@ -1,4 +1,4 @@
-package com.pakusoft.shop.adapter.out.persistance.jpa;
+package com.pakusoft.shop.adapter.out.persistence.jpa;
 
 import jakarta.persistence.*;
 import lombok.Getter;

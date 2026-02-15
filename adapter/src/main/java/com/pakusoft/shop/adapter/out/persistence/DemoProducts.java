@@ -1,4 +1,4 @@
-package com.pakusoft.shop.adapter.out.persistance;
+package com.pakusoft.shop.adapter.out.persistence;
 
 import com.pakusoft.shop.model.money.Money;
 import com.pakusoft.shop.model.product.Product;

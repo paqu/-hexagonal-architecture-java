@@ -1,7 +1,7 @@
 package com.pakusoft.shop.adapter.out.persistence.inmemory;
 
 
-import com.pakusoft.shop.adapter.out.persistance.inmemory.InMemoryProductRepository;
+import com.pakusoft.shop.adapter.out.persistence.inmemory.InMemoryProductRepository;
 import com.pakusoft.shop.adapter.out.persistence.AbstractProductRepositoryTest;
 
 class InMemoryProductRepositoryTest
