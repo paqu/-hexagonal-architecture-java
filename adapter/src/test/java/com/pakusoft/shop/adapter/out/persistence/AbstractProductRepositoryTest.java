@@ -1,27 +1,20 @@
 package com.pakusoft.shop.adapter.out.persistence;
 
-import com.pakusoft.shop.adapter.out.persistence.DemoProducts;
 import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 import com.pakusoft.shop.model.product.ProductId;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public abstract class AbstractProductRepositoryTest<T extends ProductRepository> {
+public abstract class AbstractProductRepositoryTest {
 
-    private T productRepository;
-
-    @BeforeEach
-    void initRepository() {
-        productRepository = createProductRepository();
-    }
-
-    protected abstract T createProductRepository();
+    @Autowired
+    ProductRepository productRepository;
 
     @Test
     void givenTestProductsAndATestProductId_findById_returnsATestProduct() {
