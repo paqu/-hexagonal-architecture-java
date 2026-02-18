@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import java.util.List;
@@ -20,8 +19,9 @@ import static io.restassured.RestAssured.given;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
-@ActiveProfiles("test")
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = com.pakusoft.shop.adapter.SpringAppConfig.class,
+        webEnvironment = WebEnvironment.RANDOM_PORT)
+
 class ProductsControllerTest {
 
     private static final Product TEST_PRODUCT_1 = createTestProduct(euros(19, 99));
