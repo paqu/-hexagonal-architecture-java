@@ -11,10 +11,19 @@ import com.pakusoft.shop.application.service.cart.EmptyCartService;
 import com.pakusoft.shop.application.service.cart.GetCartService;
 import com.pakusoft.shop.application.service.product.FindProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
+@ComponentScan("com.pakusoft.shop")
+@EnableAutoConfiguration
+@EnableJpaRepositories("com.pakusoft.shop.adapter.out.persistence.jpa")
+@EntityScan("com.pakusoft.shop.adapter.out.persistence.jpa")
+
 public class SpringAppConfig {
 
     @Autowired
