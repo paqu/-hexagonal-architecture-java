@@ -3,6 +3,7 @@ package com.pakusoft.shop.adapter.out.persistence.jpa;
 import com.pakusoft.shop.application.port.out.persistence.CartRepository;
 import com.pakusoft.shop.model.cart.Cart;
 import com.pakusoft.shop.model.customer.CustomerId;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 
 @Repository
+@Profile("!InMem")
 public class JpaCartRepository implements CartRepository {
 
     private final JpaCartSpringDataRepository springDataRepository;

@@ -5,15 +5,15 @@ import com.pakusoft.shop.application.port.out.persistence.ProductRepository;
 import com.pakusoft.shop.model.product.Product;
 import com.pakusoft.shop.model.product.ProductId;
 import jakarta.annotation.PostConstruct;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@ConditionalOnProperty(name = "persistence", havingValue = "mysql")
 @Repository
+@Profile("!InMem")
 public class JpaProductRepository implements ProductRepository {
 
     private final JpaProductSpringDataRepository springDataRepository;
