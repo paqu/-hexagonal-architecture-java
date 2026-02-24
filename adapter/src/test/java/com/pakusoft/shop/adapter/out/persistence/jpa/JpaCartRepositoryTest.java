@@ -9,7 +9,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @SpringBootTest(
-        classes = com.pakusoft.shop.adapter.SpringAppConfig.class
+        classes = {com.pakusoft.shop.adapter.SpringAppConfig.class, com.pakusoft.shop.adapter.JpaConfig.class}
 )
 @Testcontainers
 class JpaCartRepositoryTest extends AbstractCartRepositoryTest {
