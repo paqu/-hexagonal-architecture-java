@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface JpaProductSpringDataRepository extends JpaRepository<ProductJpaEntity, String> {
 
-    @Query("SELECT p FROM ProductJpaEntity p WHERE p.name like ?1 or p.description like ?1")
+    @Query("SELECT p FROM ProductJpaEntity p WHERE LOWER(p.name) LIKE LOWER(?1) OR LOWER(p.description) LIKE LOWER(?1)")
     List<ProductJpaEntity> findByNameOrDescriptionLike(String pattern);
 }
