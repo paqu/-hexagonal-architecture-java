@@ -16,36 +16,60 @@ class DependencyRuleTest {
     private static final String ADAPTER_PACKAGE = "adapter";
     private static final String BOOTSTRAP_PACKAGE = "bootstrap";
 
+    private static final JavaClasses ALL_CLASSES =
+            new ClassFileImporter().importPackages(ROOT_PACKAGE + "..");
+
     @Test
-    void checkDependencyRule() {
-        String importPackages = ROOT_PACKAGE + "..";
-        JavaClasses classesToCheck = new ClassFileImporter().importPackages(importPackages);
-
-        checkNoDependencyFromTo(MODEL_PACKAGE, APPLICATION_PACKAGE, classesToCheck);
-        checkNoDependencyFromTo(MODEL_PACKAGE, ADAPTER_PACKAGE, classesToCheck);
-        checkNoDependencyFromTo(MODEL_PACKAGE, BOOTSTRAP_PACKAGE, classesToCheck);
-
-        checkNoDependencyFromTo(APPLICATION_PACKAGE, ADAPTER_PACKAGE, classesToCheck);
-        checkNoDependencyFromTo(APPLICATION_PACKAGE, BOOTSTRAP_PACKAGE, classesToCheck);
-
-        checkNoDependencyFromTo(PORT_PACKAGE, SERVICE_PACKAGE, classesToCheck);
-
-        checkNoDependencyFromTo(ADAPTER_PACKAGE, SERVICE_PACKAGE, classesToCheck);
-        checkNoDependencyFromTo(ADAPTER_PACKAGE, BOOTSTRAP_PACKAGE, classesToCheck);
+    void modelShouldNotDependOnApplication() {
+        checkNoDependencyFromTo(MODEL_PACKAGE, APPLICATION_PACKAGE);
     }
 
-    private void checkNoDependencyFromTo(
-            String fromPackage, String toPackage, JavaClasses classesToCheck) {
+    @Test
+    void modelShouldNotDependOnAdapter() {
+        checkNoDependencyFromTo(MODEL_PACKAGE, ADAPTER_PACKAGE);
+    }
+
+    @Test
+    void modelShouldNotDependOnBootstrap() {
+        checkNoDependencyFromTo(MODEL_PACKAGE, BOOTSTRAP_PACKAGE);
+    }
+
+    @Test
+    void applicationShouldNotDependOnAdapter() {
+        checkNoDependencyFromTo(APPLICATION_PACKAGE, ADAPTER_PACKAGE);
+    }
+
+    @Test
+    void applicationShouldNotDependOnBootstrap() {
+        checkNoDependencyFromTo(APPLICATION_PACKAGE, BOOTSTRAP_PACKAGE);
+    }
+
+    @Test
+    void portsShouldNotDependOnServices() {
+        checkNoDependencyFromTo(PORT_PACKAGE, SERVICE_PACKAGE);
+    }
+
+    @Test
+    void adapterShouldNotDependOnServices() {
+        checkNoDependencyFromTo(ADAPTER_PACKAGE, SERVICE_PACKAGE);
+    }
+
+    @Test
+    void adapterShouldNotDependOnBootstrap() {
+        checkNoDependencyFromTo(ADAPTER_PACKAGE, BOOTSTRAP_PACKAGE);
+    }
+
+    private void checkNoDependencyFromTo(String fromPackage, String toPackage) {
         noClasses()
                 .that()
                 .resideInAPackage(fullyQualified(fromPackage))
                 .should()
                 .dependOnClassesThat()
                 .resideInAPackage(fullyQualified(toPackage))
-                .check(classesToCheck);
+                .check(ALL_CLASSES);
     }
 
-    private String fullyQualified(String packageName) {
+    private static String fullyQualified(String packageName) {
         return ROOT_PACKAGE + '.' + packageName + "..";
     }
 }
